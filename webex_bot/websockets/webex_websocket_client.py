@@ -19,7 +19,7 @@ except ImportError:
 
 logger = logging.getLogger(__name__)
 
-DEFAULT_DEVICE_URL = "https://wdm-a.wbx2.com/wdm/api/v1"
+DEFAULT_DEVICE_URL = "https://wdm-r.wbx2.com/wdm/api/v1"
 
 DEVICE_DATA = {
     "deviceName": "pywebsocket-client",
