@@ -292,6 +292,12 @@ class WebexBot(WebexWebsocketClient):
             return e.reply_message, e.reply_one_to_one
 
     @staticmethod
+    def send_message(self, text, room_id):
+    """
+    Simple helper to send a text message to a Webex room.
+    """
+    self.teams.messages.create(roomId=room_id, text=text)
+    
     def get_message_passed_to_command(command, message):
         if command and message.lower().startswith(command.lower()):
             return message[len(command):]
