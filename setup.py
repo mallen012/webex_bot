@@ -1,48 +1,25 @@
 #!/usr/bin/env python
 
-"""The setup script."""
-
 from setuptools import setup, find_packages
 
-with open('README.md') as readme_file:
-    readme = readme_file.read()
-
-requirements = ['webexpythonsdk==2.0.2', 'coloredlogs', 'websockets==11.0.3', 'backoff']
-
-setup_requirements = ['pytest-runner', ]
-
-test_requirements = ['pytest>=3', ]
-
-extras_requirements = {
-    "proxy": ["websockets_proxy>=0.1.1"]
-}
-
 setup(
-    author="Mike Allen",
-    author_email='mikeall@go2cisco.com',
-    python_requires='>=3.8',
-    classifiers=[
-        'Development Status :: 2 - Pre-Alpha',
-        'Intended Audience :: Developers',
-        'License :: OSI Approved :: MIT License',
-        'Natural Language :: English',
-        'Programming Language :: Python :: 3.8',
-        'Programming Language :: Python :: 3.9',
+    name="webex-bot",
+    version="1.0.0",
+    packages=find_packages(),
+    install_requires=[
+        "requests",
+        "websocket-client",
+        "webexteamssdk",  # Or your forked SDK if applicable
     ],
-    description="Python package for a Webex Bot based on websockets.",
-    extras_require=extras_requirements,
-    install_requires=requirements,
-    license="MIT license",
-    long_description=readme,
-    include_package_data=True,
+    author="Mike Allen",
+    author_email="your@email.com",
+    description="Custom Webex Bot Framework with WebSocket Fix",
+    long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
-    keywords='webex_bot',
-    name='webex_bot',
-    packages=find_packages(include=['webex_bot', 'webex_bot.*']),
-    setup_requires=setup_requirements,
-    test_suite='tests',
-    tests_require=test_requirements,
-    url='https://github.com/mallen012/webex_bot',
-    version='0.5.2.1',
-    zip_safe=False,
+    url="https://github.com/mallen012/webex_bot",
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "Operating System :: OS Independent",
+    ],
+    python_requires=">=3.7",
 )
