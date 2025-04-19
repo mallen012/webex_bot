@@ -63,10 +63,8 @@ class WebexBot(WebexWebsocketClient):
                                       proxies=proxies)
 
         if help_command is None:
-            self.help_command = HelpCommand(
-                bot_name=bot_name,
-                bot_help_subtitle=bot_help_subtitle,
-                bot_help_image=self.teams.people.me().avatar)
+            self.help_command = HelpCommand(bot=self)
+
         else:
             self.help_command = help_command
 
