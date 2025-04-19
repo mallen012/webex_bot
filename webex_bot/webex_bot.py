@@ -69,14 +69,7 @@ class WebexBot(WebexWebsocketClient):
         self.approval_parameters_check()
         self.bot_display_name = ""
         self.get_me_info()
-        self.threads = threads
-                     
-    def send_message(self, text, room_id):
-    """
-    Simple helper to send a text message to a Webex room.
-    """
-    self.teams.messages.create(roomId=room_id, text=text)
-    
+        self.threads = threads    
     
     def set_default_handler(self, handler_func):
         """
