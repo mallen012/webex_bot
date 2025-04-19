@@ -19,7 +19,6 @@ log = logging.getLogger(__name__)
 
 
 class WebexBot(WebexWebsocketClient):
-
     def __init__(self,
                  teams_bot_token,
                  approved_users=[],
@@ -33,6 +32,10 @@ class WebexBot(WebexWebsocketClient):
                  help_command=None,
                  log_level="INFO",
                  proxies=None):
+        self.teams_bot_token = teams_bot_token
+        self.commands = []
+        self.default_handler = None  # Fallback handler    
+
         """
         Initialise WebexBot.
 
