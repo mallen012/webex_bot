@@ -77,6 +77,13 @@ class WebexBot(WebexWebsocketClient):
         """
         self.default_handler = handler_func
 
+    def send_message(self, text, room_id):
+        """
+        Send a simple message to a Webex room.
+        Used by plugins like ChuckCommand.
+        """
+        self.teams.messages.create(roomId=room_id, text=text)
+
     @backoff.on_exception(backoff.expo, requests.exceptions.ConnectionError)
     def get_me_info(self):
         me = self.teams.people.me()
@@ -292,7 +299,6 @@ class WebexBot(WebexWebsocketClient):
             return e.reply_message, e.reply_one_to_one
 
     @staticmethod
-    
     def get_message_passed_to_command(command, message):
         if command and message.lower().startswith(command.lower()):
             return message[len(command):]
