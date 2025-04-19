@@ -18,8 +18,8 @@ extras_requirements = {
 }
 
 setup(
-    author="Finbarr Brady",
-    author_email='finbarr@somemail.com',
+    author="Mike Allen",
+    author_email='mikeall@go2cisco.com',
     python_requires='>=3.8',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
@@ -42,7 +42,7 @@ setup(
     setup_requires=setup_requirements,
     test_suite='tests',
     tests_require=test_requirements,
-    url='https://github.com/fbradyirl/webex_bot',
-    version='0.5.2',
+    url='https://github.com/mallen012/webex_bot',
+    version='0.5.2.1',
     zip_safe=False,
 )
